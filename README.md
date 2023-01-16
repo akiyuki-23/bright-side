@@ -1,24 +1,31 @@
-# README
+# アプリケーション名 <br>
+BRIGHT SIDE
+# アプリケーション概要	
+その日起こったいい出来事や頑張れた事を周りの仲間とシェアして認め合う。またその日出来なかった事は今後の目標として登録して励まし合える。
+# URL	
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テスト用アカウント
 
-Things you may want to cover:
+# 利用方法	
 
-* Ruby version
+# アプリケーションを作成した背景	
+現在、妻とその日起こったいい出来事や頑張れた事をラインのグループでシェアしていている。<br>
+その事で自身のモチベーションアップや妻の頑張りが理解でき、会話が弾むようになった。<br>
+親しい人といい出来事を共有するのは、直接会うことができなくでも、ポジティブになることができる。<br>
+ただラインでは、共有が難しい部分もあり、アプリケーションがあれば、もっと簡単に共有やコメントができるのではないかと思い、開発した。
 
-* System dependencies
+# 洗い出した要件	
 
-* Configuration
+# 実装した機能についての画像やGIFおよびその説明	
 
-* Database creation
+# 実装予定の機能	
 
-* Database initialization
+# データベース設計	
 
-* How to run the test suite
+# 画面遷移図	
 
-* Services (job queues, cache servers, search engines, etc.)
+# 開発環境	
 
-* Deployment instructions
+# ローカルでの動作方法
 
-* ...
+# 工夫したポイント	
