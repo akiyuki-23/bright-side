@@ -1,0 +1,15 @@
+ <!-- Custom styles for this template -->
+  <link href="headers.css" rel="stylesheet">
+
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <%= link_to "Bright side", "/", class: "d-flex align-items-center col-md-3 mb-2 mb-md-0 fs-2 text-dark text-decoration-none" %>
+
+      <div class="col-md-3 text-end">
+        <%# <li><%= link_to current_user.nickname, "#", class: "btn btn-outline-primary me-2" </li> %>
+        <%# <li><%= button_to 'ログアウト', "#", method: :delete, class: "btn btn-primary" </li> %>
+        <%= link_to "ログイン", "#", class: "btn btn-primary" %>
+        <%= link_to "新規登録", "#", class: "btn btn-warning" %>
+      </div>
+  </header>
+</div>
