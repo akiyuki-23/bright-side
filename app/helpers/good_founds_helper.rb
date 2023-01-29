@@ -1,0 +1,2 @@
+module GoodFoundsHelper
+end
