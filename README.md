@@ -29,7 +29,7 @@ TBA
 TBA
 
 # データベース設計	
-![画面遷移図](bright-side.png)
+![DB設計](bright-side.png)
 
 # 画面遷移図	
 TBA
