@@ -20,7 +20,7 @@ TBA
 ただラインでは、共有が難しい部分もあり、アプリケーションがあれば、もっと簡単に共有やコメントができるのではないかと思い、開発した。
 
 # 洗い出した要件	
-TBA
+https://docs.google.com/spreadsheets/d/1yNAZ4UH-IFcBWkelOUe4sQKyG4X16Sfj5OXhHVe8lic/edit?usp=drive_web&ouid=108640310027365961102
 
 # 実装した機能についての画像やGIFおよびその説明	
 TBA
@@ -38,7 +38,13 @@ TBA
 * Ruby/Ruby on Rails/MySQL/Github/Render/Visual Studio Code/Bootstrap
 
 # ローカルでの動作方法
-TBA
+git clone https://github.com/akiyuki-23/bright-side
+% cd アプリケーションのディレクトリ
+% bundle install
+% yarn install
+% rails db:create
+% rails db:migrate
+% rails s
 
 # 工夫したポイント	
 TBA
