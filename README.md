@@ -38,13 +38,13 @@ TBA
 * Ruby/Ruby on Rails/MySQL/Github/Render/Visual Studio Code/Bootstrap
 
 # ローカルでの動作方法
-git clone https://github.com/akiyuki-23/bright-side
-% cd アプリケーションのディレクトリ
-% bundle install
-% yarn install
-% rails db:create
-% rails db:migrate
-% rails s
+git clone https://github.com/akiyuki-23/bright-side<br>
+% cd アプリケーションのディレクトリ<br>
+% bundle install<br>
+% yarn install<br>
+% rails db:create<br>
+% rails db:migrate<br>
+% rails s<br>
 
 # 工夫したポイント	
 TBA
