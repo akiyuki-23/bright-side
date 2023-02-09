@@ -1,0 +1,30 @@
+<div class="cover-new">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="font-weight-normal mt-3">良かった出来事の投稿</h1>
+    </div>
+    <div class="row justify-content-center">
+      <%# 新規投稿のパスの記載 form_with model: hoge, url: '', local:true do |f| %>
+      <div class="form-group">
+        <label class="form-label">日付</label>
+        <%= f.text_field :execution_date, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">タイトル</label>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">内容</label>
+        <%= f.text_area :event, row: 10, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">カテゴリー</label>
+        <%= f.text_field :event-category, class: "form-control" %>
+        <%# タブから選ぶように実装する%>
+        <%#= f.collection_select(:category, EventCategory.all, :id, :name, {}, {class:"select-box", id:"event-category"}) %>
+      </div>
+      <%#= f.submit "投稿する", class="btn btn-success" %>
+      <%# end %>
+    </div>
+  </div>
+</div>
