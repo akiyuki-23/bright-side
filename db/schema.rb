@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_02_12_135010) do
     t.date "execution_date", null: false
     t.string "title", null: false
     t.text "event_detail", null: false
-    t.integer "event_category", null: false
+    t.integer "category_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
