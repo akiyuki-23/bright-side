@@ -22,12 +22,11 @@
       </div>
       <div class="form-group">
         <label class="form-label">カテゴリー</label>
-        <%= f.text_field :category_id, class: "form-control" %>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
       </div>
       <div class="publish-btn-content">
         <%= f.submit "投稿する", class: "btn btn-success" %>
-        <%= link_to 'もどる', root_path, class: "btn btn-alart"%>
+        <%= link_to 'もどる', root_path, class: "btn btn-outline-success"%>
       </div>
       <% end %>
     </div>
