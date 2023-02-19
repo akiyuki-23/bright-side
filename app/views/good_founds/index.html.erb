@@ -13,7 +13,9 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">
+                <%= link_to good_found_path(good_found.id) do %>
                   <%= good_found.title %>
+                <% end %>
                 </h5>
               <p class="card-text">
                 <%= truncate(good_found.event_detail, :length => 10) %>

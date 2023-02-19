@@ -1,5 +1,5 @@
 class GoodFoundsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @good_founds = GoodFound.order('created_at DESC')
   end
@@ -15,6 +15,10 @@ class GoodFoundsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @good_found = GoodFound.find(params[:id])
   end
 
   private
