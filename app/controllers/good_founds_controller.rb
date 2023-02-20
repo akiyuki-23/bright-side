@@ -27,7 +27,7 @@ class GoodFoundsController < ApplicationController
 
   def update
     if @good_found.update(good_found_params)
-    redirect_to good_found_path(@good_found.id)
+     redirect_to good_found_path(@good_found.id)
     else
       render :edit
     end
