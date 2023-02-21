@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+<div class="cover-new">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h1 class="font-weight-normal mt-3">投稿の編集</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= form_with(model: @good_found, url: good_found_path(@good_found.id), local:true) do |f| %>
+
+       <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group">
+        <label class="form-label">日付</label>
+        <%= f.date_field :execution_date, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">タイトル</label>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">内容</label>
+        <%= f.text_area :event_detail, row: 20, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label class="form-label">カテゴリー</label>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
+      </div>
+      <div class="publish-btn-content">
+        <%= f.submit "更新する", class: "btn btn-success" %>
+        <%= link_to 'もどる', root_path, class: "btn btn-outline-success"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
