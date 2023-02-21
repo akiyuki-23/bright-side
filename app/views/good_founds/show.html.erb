@@ -1,26 +1,39 @@
 <%= render "shared/header" %>
+
 <div class="container">
   <div class="d-flex justify-content-center">
     <h1 class="text-center mb-4">投稿の詳細</h1>
   </div>
+  
   <div class="row">
-  <div class="col-md-12 col-lg-8 mx-auto text-center">
-    <h2><%= @good_found.title %></h2>
-    <p><%= @good_found.event_detail %></p>
-    <p>投稿者名：<%= @good_found.user.nickname %> さん</p>
-    <p>投稿日時：<%= @good_found.execution_date.strftime('%Y/%m/%d') %></p>
-    <p>カテゴリー：<%= @good_found.category.name %></p>
-    <hr>
-    <div class="btn-group">
-    <% if user_signed_in? && current_user.id == @good_found.user_id %>
-      <%= link_to '編集する', edit_good_found_path(@good_found.id), class:"btn btn-sm btn-outline-secondary" %>
-    <% end %>
-      <%= link_to 'もどる', root_path, class: "btn btn-sm btn-outline-secondary" %>
+    <div class="col-md-12 col-lg-8 mx-auto text-center">
+      <h2><%= @good_found.title %></h2>
+      <p><%= @good_found.event_detail %></p>
+      <p>投稿者名：<%= @good_found.user.nickname %> さん</p>
+      <p>投稿日時：<%= @good_found.execution_date.strftime('%Y/%m/%d') %></p>
+      <p>カテゴリー：<%= @good_found.category.name %></p>
+      
+      <hr>
+      
+      <div class="btn-group">
+        <% if user_signed_in? && current_user.id == @good_found.user_id %>
+          <%= link_to '編集する', edit_good_found_path(@good_found.id), class:"btn btn-sm btn-outline-secondary" %>
+        <% end %>
+        <%= link_to 'もどる', root_path, class: "btn btn-sm btn-outline-secondary" %>
+      </div>
+      
+      <hr>
+      
+      <h3>コメント</h3>
+      <p>コメントがありません。</p>
+      
+      <!-- 削除機能がない旨を表示する -->
+       <p class="alert alert-danger">このアプリには削除機能はありません。</p>
+      
+      <!-- 編集機能を使ってポジティブな出来事に変更する旨を表示する -->
+      <p class="alert alert-info">もし削除したくなったら、編集して別のポジティブな出来事に変更してください。</p>
+      
     </div>
-    <hr>
-    <h3>コメント</h3>
-    <p>コメントがありません。</p>
   </div>
-</div>
 </div>
 
