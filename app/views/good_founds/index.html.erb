@@ -36,7 +36,9 @@
 
 </main>
 <%# 新規投稿ボタン %>
-<div class="position-fixed bottom-0 end-0 p-5">
-  <%= link_to "新規投稿", new_good_found_path, class: 'btn btn-info rounded-pill fw-bold btn-lg' %>
-</div>
+<% if user_signed_in?%>
+  <div class="position-fixed bottom-0 end-0 p-5">
+    <%= link_to "新規投稿", new_good_found_path, class: 'btn btn-info rounded-pill fw-bold btn-lg' %>
+  </div>
+<% end %>
 <%# /新規投稿ボタン %>
