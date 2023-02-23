@@ -36,9 +36,11 @@ RSpec.describe "良かった出来事の投稿", type: :system do
     end
   end
   context '良かった出来事が投稿できない時' do
-    it 'ログインしたユーザーは新規投稿ページへ遷移できない' do
+    it 'ログインしてないユーザーは新規投稿ページへ遷移できない' do
       # トップページに遷移する
+      visit root_path
       # 新規投稿画面へのボタンがないことを確認する
+      expect(page).to have_no_content('新規投稿')
     end
   end
 end
