@@ -44,3 +44,35 @@ RSpec.describe "良かった出来事の投稿", type: :system do
     end
   end
 end
+
+RSpec.describe "出来事の編集", type: :system do
+  before do
+    @good_found1 = FactoryBot.create(:good_found)
+    @good_found2 = FactoryBot.create(:good_found)
+  end
+  context '出来事の編集ができる時' do
+    it 'ログインしたユーザーは自身が投稿した出来事の編集ができる' do
+      # good_found1を投稿したユーザーでログインする
+      # good_found1に編集リンクがある事を確認する
+      # 編集ページへ遷移する
+      # すでに投稿済みの内容がフォームに入っていることを確認する
+      # 投稿内容を編集する
+      # 編集してもGoodFoundモデルのカウントは変わらないことを確認する
+      # 詳細画面へ遷移する
+      # トップページには先ほど編集した内容の出来事が存在する事を確認する(タイトル)
+      # トップページには先ほど編集した内容の出来事が存在する事を確認する(日付)
+    end
+  end
+  context '出来事の編集ができない時' do
+    it 'ログインしたユーザーは自分以外が投稿した出来事の編集ができない' do
+      # good_found1を投稿したユーザーでログインする
+      # good_found2に編集へのリンクがないことを確認する
+    end
+    it 'ログインしていないと編集画面には遷移できない' do
+      # トップページにいる
+      # good_found1に「編集」リンクがないことを確認する
+      # good_found2に「編集」リンクがないことを確認する
+    end
+  end
+end
+
