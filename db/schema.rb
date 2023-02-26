@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_12_135010) do
+ActiveRecord::Schema.define(version: 2023_02_26_135038) do
+
+  create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "user_id", null: false
+    t.bigint "good_found_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["good_found_id"], name: "index_comments_on_good_found_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "good_founds", charset: "utf8", force: :cascade do |t|
     t.date "execution_date", null: false
@@ -36,5 +46,7 @@ ActiveRecord::Schema.define(version: 2023_02_12_135010) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "good_founds"
+  add_foreign_key "comments", "users"
   add_foreign_key "good_founds", "users"
 end
