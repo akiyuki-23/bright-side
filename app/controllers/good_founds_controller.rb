@@ -20,6 +20,8 @@ class GoodFoundsController < ApplicationController
 
   def show
     @good_found = GoodFound.find(params[:id])
+    @comment = Comment.new
+    @comments = @good_found.comments.includes(:user)
   end
 
   def edit
