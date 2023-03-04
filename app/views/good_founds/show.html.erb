@@ -24,8 +24,37 @@
       
       <hr>
       
-      <h3>コメント</h3>
-      <p>コメントがありません。</p>
+      <div class="container">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@good_found, @comment], local: true, html: {class: "form-inline"}) do |form| %>
+            <div class="field">
+              <%= form.label :content, "コメントする" %><br />
+              <%= form.text_field :content, id:"comment_content" %>
+            </div>
+            <div class="actions">
+              <%= form.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+
+
+
+      <div class="comments">
+        <h4>＜コメント一覧＞ 件数:<%= @good_found.comments.count %>件</h4>
+        <% @comments.each do |comment| %>
+          <P>
+            <strong><%= comment.user.nickname %> :
+            <%= comment.content %>
+            <% if comment.user == current_user %>
+              <%= link_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, class: "btn-sm btn-danger" %>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+
       
       <!-- 削除機能がない旨を表示する -->
        <p class="alert alert-danger">このアプリには削除機能はありません。</p>
