@@ -28,7 +28,7 @@
         <% if user_signed_in? %>
           <%= form_with(model: [@good_found, @comment], local: true, html: {class: "form-inline"}) do |form| %>
             <div class="field">
-              <%= form.label :content, "コメント" %><br />
+              <%= form.label :content, "コメントする" %><br />
               <%= form.text_field :content, id:"comment_content" %>
             </div>
             <div class="actions">
@@ -43,11 +43,14 @@
 
 
       <div class="comments">
-        <h4>＜コメント一覧＞</h4>
+        <h4>＜コメント一覧＞ 件数:<%= @good_found.comments.count %>件</h4>
         <% @comments.each do |comment| %>
           <P>
-            <strong><%= comment.user.nickname %>
+            <strong><%= comment.user.nickname %> :
             <%= comment.content %>
+            <% if comment.user == current_user %>
+              <%= link_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, class: "btn-sm btn-danger" %>
+            <% end %>
           </p>
         <% end %>
       </div>

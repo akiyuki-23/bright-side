@@ -10,6 +10,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find_by(params[:id], good_found_id: params[:good_found_id])
+    @comment.destroy
+    redirect_to good_found_path(@comment.good_found)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content).merge(user_id: current_user.id, good_found_id: params[:good_found_id])
