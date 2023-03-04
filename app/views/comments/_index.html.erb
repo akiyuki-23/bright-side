@@ -1,0 +1,12 @@
+<%= @good_found.comments.count %>件コメント
+<div class="comments">
+  <% @comments.each do |comment| %>
+      <P>
+        <strong><%= comment.user.nickname %> :
+        <%= comment.content %>
+        <% if comment.user == current_user %>
+            <%= button_to "削除", good_found_comment_path(@good_found, comment), method: :delete, remote: true, class: "comment-delete btn-sm btn-danger" %>
+        <% end %>
+      </p>
+    <% end %>
+</div>

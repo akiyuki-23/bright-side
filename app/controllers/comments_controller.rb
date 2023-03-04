@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
   def create
     @comment = Comment.create(comment_params)
     if @comment.save
@@ -11,9 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(params[:id], good_found_id: params[:good_found_id])
-    @comment.destroy
-    redirect_to good_found_path(@comment.good_found)
+    @good_found = GoodFound.find(params[:good_found_id])
+    comment = @good_found.comments.find(params[:id])
+    comment.destroy
+    redirect_to good_found_path(comment.good_found)
   end
 
   private

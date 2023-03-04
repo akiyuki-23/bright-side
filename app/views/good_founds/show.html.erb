@@ -24,38 +24,26 @@
       
       <hr>
       
-      <div class="container">
+      <div class="row">
+        <div>
+          <div class="comment">
+            <h4>＜コメント一覧＞</h4>
+          </div>
+          <div class="comment_area">
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+          </div>
+        </div>
+        <hr>
         <% if user_signed_in? %>
-          <%= form_with(model: [@good_found, @comment], local: true, html: {class: "form-inline"}) do |form| %>
-            <div class="field">
-              <%= form.label :content, "コメントする" %><br />
-              <%= form.text_field :content, id:"comment_content" %>
-            </div>
-            <div class="actions">
-              <%= form.submit "投稿する", class: :form__btn%>
-            </div>
-          <% end %>
+          <div class="comment">
+            <h4 class="text-left">コメントを投稿する</h4>
+            <%= render partial: 'comments/form', locals: { comment: @comment, good_found: @good_found } %>
+          </div>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
-      </div>
+      </div>     
 
-
-
-      <div class="comments">
-        <h4>＜コメント一覧＞ 件数:<%= @good_found.comments.count %>件</h4>
-        <% @comments.each do |comment| %>
-          <P>
-            <strong><%= comment.user.nickname %> :
-            <%= comment.content %>
-            <% if comment.user == current_user %>
-              <%= link_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, class: "btn-sm btn-danger" %>
-            <% end %>
-          </p>
-        <% end %>
-      </div>
-
-      
       <!-- 削除機能がない旨を表示する -->
        <p class="alert alert-danger">このアプリには削除機能はありません。</p>
       
