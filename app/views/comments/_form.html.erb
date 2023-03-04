@@ -1,5 +1,5 @@
 <!-- コメント入力フォーム ------------------------------------------------------------>
-<%= form_with(model: [good_found, comment], url: good_found_comments_path(@good_found)) do |form| %>
+<%= form_with(model: [good_found, comment], url: good_found_comments_path(@good_found), id: "form")do |form| %>
   <%= form.text_area :content, id:"comment_content", class: "input-mysize" %>
   <%= form.submit "コメントする", id: "submit", class: "btn btn-outline-dark float-right" %>
 <% end %>
