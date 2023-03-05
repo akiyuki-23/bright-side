@@ -1,12 +1,18 @@
 <%= @good_found.comments.count %>件コメント
 <div class="comments">
   <% @comments.each do |comment| %>
-      <P>
-        <strong><%= comment.user.nickname %> :
-        <%= comment.content %>
-        <% if comment.user == current_user %>
-            <%= button_to "削除", good_found_comment_path(@good_found, comment), method: :delete, remote: true, class: "comment-delete btn-sm btn-danger" %>
-        <% end %>
-      </p>
-    <% end %>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <p class="text-center">
+          <strong><%= comment.user.nickname %> :</strong> 
+          <%= comment.content %>
+        </p>
+      </div>
+      <% if comment.user == current_user %>
+        <div class="col-md-2">
+            <%= link_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, remote: true, class: "comment-delete btn-sm btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
