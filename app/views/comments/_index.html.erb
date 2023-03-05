@@ -10,7 +10,7 @@
       </div>
       <% if comment.user == current_user %>
         <div class="col-md-2">
-            <%= link_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, remote: true, class: "comment-delete btn-sm btn-danger" %>
+            <%= button_to "削除", good_found_comment_path(@good_found.id, comment.id), method: :delete, remote: true, class: "comment-delete btn-sm btn-danger" %>
         </div>
       <% end %>
     </div>
