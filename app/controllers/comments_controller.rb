@@ -4,27 +4,18 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
     if @comment.save
-      respond_to do |format|
-        format.html { redirect_to good_found_path(@comment.good_found) }
-        format.json { render json: { comment: @comment, success: true } }
-      end
+      redirect_to good_found_path(@comment.good_found)
     else
       @good_found = @comment.good_found
       @comments = @good_found.comments
-      respond_to do |format|
-        format.html { render template: "good_founds/show" }
-        format.json { render json: { errors: @comment.errors.full_messages, success: false } }
-      end
+      render template: "good_founds/show"
     end
   end
 
   def destroy
     @comment = Comment.find_by(params[:id], good_found_id: params[:good_found_id])
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to good_found_path(@comment.good_found) }
-      format.json { render json: { success: true } }
-    end
+    redirect_to good_found_path(@comment.good_found)
   end
 
   private
