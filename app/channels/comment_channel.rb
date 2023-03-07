@@ -1,6 +1,7 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    @good_found = GoodFound.find(params[:good_found_id])
+    stream_for @good_found
   end
 
   def unsubscribed

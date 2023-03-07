@@ -2,18 +2,15 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
-    @comment = Comment.create(comment_params)
+    @good_found = GoodFound.find(params[:good_found_id])
+    @comment = @good_found.comments.new(comment_params)
     if @comment.save
-      redirect_to good_found_path(@comment.good_found)
-    else
-      @good_found = @comment.good_found
-      @comments = @good_found.comments
-      render template: "good_founds/show"
+      CommentChannel.broadcast_to @good_found, { comment: @comment, user: @comment.user }
     end
   end
 
   def destroy
-    @comment = Comment.find_by(params[:id], good_found_id: params[:good_found_id])
+    @comment = current_user.comments.find(params[:id])
     @comment.destroy
     redirect_to good_found_path(@comment.good_found)
   end

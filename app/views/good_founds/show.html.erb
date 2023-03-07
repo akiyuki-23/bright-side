@@ -30,14 +30,14 @@
             <h4>＜コメント一覧＞</h4>
           </div>
           <div class="comment_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            <%= render partial: 'comments/index', locals: { comments: @comments }, remote: true %>
           </div>
         </div>
         <hr>
         <% if user_signed_in? %>
           <div class="comment">
             <h4 class="text-left">コメントを投稿する</h4>
-            <%= render partial: 'comments/form', locals: { comment: @comment, good_found: @good_found } %>
+            <%= render partial: 'comments/form', locals: { comment: @comment, good_found: @good_found }, remote: true %>
           </div>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>

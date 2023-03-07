@@ -1,11 +1,11 @@
 <!-- コメント入力フォーム ------------------------------------------------------------>
 <div class="row">
-  <%= form_with(model: [good_found, comment], url: good_found_comments_path(@good_found), id: "comment_form")do |form| %>
+  <%= form_with(model: [good_found, comment], url: good_found_comments_path(@good_found), id: "comment-form")do |form| %>
   <div class="col-auto">
-    <%= form.text_area :content, id:"comment_content", class: "input-mysize"%>
+    <%= form.text_area :content, id:"comment-content", class: "input-mysize"%>
   </div>
   <div class="col-auto">
-    <%= form.submit "コメントする", id: "comment_submit", class: "btn btn-outline-dark float-right" %>
+    <%= form.submit "コメントする", id: "comment-submit", class: "btn btn-outline-dark float-right" %>
   </div>
   <% end %>
 </div>
