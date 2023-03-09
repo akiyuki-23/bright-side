@@ -24,8 +24,6 @@ if(location.pathname.match(/\/good_founds\/\d/)){
               ${ data.comment.content }
             </p>
           </div>
-          <div class="col-md-2">
-          </div>
         </div>`
       const comments = document.getElementById("comments")
       comments.insertAdjacentHTML('beforeend', html)
