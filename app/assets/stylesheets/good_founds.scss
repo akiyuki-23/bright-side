@@ -14,3 +14,15 @@
 h1 {
   font-family: 'Caveat', cursive;
 }
+
+body {
+  padding-top:54px;
+} 
+
+.bg-img {
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-image: url("sample.jpg");
+  background-size: cover;
+  background-position: center 100%;
+}
