@@ -14,3 +14,46 @@
 h1 {
   font-family: 'Caveat', cursive;
 }
+
+
+//headerのCSS
+.bg-img {
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-image: url("beautiful-sunrise-in-lake-.png");
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.head-img {
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-image: url("sunrise.png");
+  background-size: cover;
+  background-position: center 40%;
+  margin-top: 0;
+}
+
+.lead {
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+.lead-eng {
+  font-family: 'Caveat', cursive;
+  font-size: 180%;
+}
+//header
+
+
+//good_found_show
+.show-back {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgba(168, 202, 240, 0.6), rgba(233, 240, 250, 0.6));
+}
+
+.cover-new {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgba(168, 202, 240, 0.6), rgba(233, 240, 250, 0.6));
+}
