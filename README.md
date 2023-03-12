@@ -49,7 +49,7 @@ BrightPoint機能（出来事の自己採点機能）
 ![DB設計](bright-side.png)
 
 # 画面遷移図	
-![画面遷移図](%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
+![画面遷移図](遷移図.png)
 
 # 開発環境	
 * Ruby/Ruby on Rails/MySQL/Github/Render/Visual Studio Code/Bootstrap
