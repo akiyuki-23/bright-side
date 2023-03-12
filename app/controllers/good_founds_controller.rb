@@ -12,7 +12,7 @@ class GoodFoundsController < ApplicationController
   def create
     @good_found = GoodFound.new(good_found_params)
     if @good_found.save
-      redirect_to root_path, notice: '投稿完了しました。You had a good day!!'
+      redirect_to root_path, notice: '投稿が完了しました!! You had a good day!!'
     else
       render :new
     end
