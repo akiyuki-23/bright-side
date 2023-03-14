@@ -1,6 +1,7 @@
 class GoodFoundsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, only: [:edit, :update]
+  before_action :basic_auth
   def index
     @good_founds = GoodFound.order('created_at DESC')
   end
@@ -46,5 +47,11 @@ class GoodFoundsController < ApplicationController
     return if @good_found.user == current_user
 
     redirect_to root_path
+  end
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+    end
   end
 end
