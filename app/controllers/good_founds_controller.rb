@@ -3,7 +3,7 @@ class GoodFoundsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update]
   before_action :basic_auth
   def index
-    @good_founds = GoodFound.order('created_at DESC')
+    @good_founds = GoodFound.preload(:user).order(created_at: :DESC)
   end
 
   def new
@@ -22,7 +22,7 @@ class GoodFoundsController < ApplicationController
   def show
     @good_found = GoodFound.find(params[:id])
     @comment = Comment.new
-    @comments = @good_found.comments.includes(:user)
+    @comments = @good_found.comments.preload(:user)
   end
 
   def edit
