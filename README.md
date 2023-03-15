@@ -13,7 +13,7 @@ Bright Sideを使うことで、日々の生活の中で起こる小さなこと
 https://bright-side.onrender.com/
 
 # テスト用アカウント
-Basic認証ID      : ed-host1</br>
+Basic認証ID      : edhost1</br>
 Basic認証パスワード: 2185</br>
 メールアドレス     :user1@test.com</br>
 パスワード        :test123</br>
