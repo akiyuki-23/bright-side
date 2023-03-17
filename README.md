@@ -58,8 +58,8 @@ https://docs.google.com/spreadsheets/d/1yNAZ4UH-IFcBWkelOUe4sQKyG4X16Sfj5OXhHVe8
 [![Image from Gyazo](https://i.gyazo.com/445ff8b3c28da73f0d6c59c74828d6a6.gif)](https://gyazo.com/445ff8b3c28da73f0d6c59c74828d6a6)
 
 # 実装予定の機能
-現在は、目標を共有する機能を追加実装中</br>
-今後は、コメントの削除機能、BrightPoint機能（出来事の自己採点機能）などを実装予定
+日本語化の実装中</br>
+今後は、目標を共有する機能、コメントの削除機能、BrightPoint機能（出来事の自己採点機能）などを実装予定
 
 # データベース設計	
 ![DB設計](bright-side.png)
