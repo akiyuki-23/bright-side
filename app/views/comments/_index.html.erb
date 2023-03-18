@@ -1,4 +1,6 @@
-<%= @good_found.comments.count %>件コメント
+<div class="comment-count p-2">
+<%= @good_found.comments.count %>件
+</div>
 <div id="comments">
   <% @comments.each do |comment| %>
     <div class="row justify-content-center">
