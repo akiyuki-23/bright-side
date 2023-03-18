@@ -2,7 +2,7 @@
 <div class="cover-new">
   <div class="container">
     <div class="d-flex justify-content-center">
-      <h1 class="font-weight-normal mt-3">投稿の編集</h1>
+      <h1 class="title-text font-weight-normal mt-3">＜投稿の編集＞</h1>
     </div>
     <div class="d-flex justify-content-center">
       <%= form_with(model: @good_found, url: good_found_path(@good_found.id), local:true) do |f| %>
@@ -26,8 +26,8 @@
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
       </div>
       <div class="publish-btn-content">
-        <%= f.submit "更新する", class: "btn btn-success" %>
-        <%= link_to 'もどる', root_path, class: "btn btn-outline-success"%>
+        <%= f.submit "更新する", class: "btn btn-info" %>
+        <%= link_to 'もどる', root_path, class: "btn btn-outline-dark"%>
       </div>
       <% end %>
     </div>

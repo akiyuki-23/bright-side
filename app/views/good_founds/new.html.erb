@@ -2,7 +2,9 @@
 <div class="cover-new">
   <div class="container">
     <div class="d-flex justify-content-center">
-      <h1 class="font-weight-normal mt-3">出来事の良かった面の投稿</h1>
+      <h1 class="title-text font-weight-normal text-center mt-3">＜新規投稿＞<br>
+        <span class='title-text h5'>〜過去の出来事のいい面をシェアしよう〜</span>
+      </h1>
     </div>
     <div class="d-flex justify-content-center">
       <%= form_with(model: @good_found, url: good_founds_path, local:true) do |f| %>
@@ -26,8 +28,8 @@
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
       </div>
       <div class="publish-btn-content">
-        <%= f.submit "投稿する", class: "btn btn-success" %>
-        <%= link_to 'もどる', root_path, class: "btn btn-outline-success"%>
+        <%= f.submit "投稿する", class: "btn btn-info" %>
+        <%= link_to 'もどる', root_path, class: "btn btn-outline-dark"%>
       </div>
       <% end %>
     </div>
