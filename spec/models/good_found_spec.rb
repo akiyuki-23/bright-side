@@ -15,22 +15,23 @@ RSpec.describe GoodFound, type: :model do
       it "execution_dateが空では登録できない" do
         @good_found.execution_date = ''
         @good_found.valid?
-        expect(@good_found.errors.full_messages).to include("Execution date can't be blank")
+        expect(@good_found.errors.full_messages).to include("日付を入力してください")
       end
       it "titleが空では登録できない" do
         @good_found.title = ''
         @good_found.valid?
-        expect(@good_found.errors.full_messages).to include("Title can't be blank")
+        expect(@good_found.errors.full_messages).to include("タイトルを入力してください")
       end
       it "event_detailが空では登録できない" do
         @good_found.event_detail = ''
         @good_found.valid?
-        expect(@good_found.errors.full_messages).to include("Event detail can't be blank")
+        expect(@good_found.errors.full_messages).to include("内容を入力してください")
       end
       it "category_idがid:1では登録できない" do
         @good_found.category_id = '1'
         @good_found.valid?
-        expect(@good_found.errors.full_messages).to include("Category can't be blank")
+        expect(@good_found.errors.full_messages).to include("カテゴリーを入力してください
+          ")
       end
     end
   end
