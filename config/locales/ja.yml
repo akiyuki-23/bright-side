@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      good_found:
+        execution_date: 日付
+        title: タイトル
+        event_detail: 内容
+        category_id: カテゴリー
